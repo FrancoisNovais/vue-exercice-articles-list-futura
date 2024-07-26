@@ -16,7 +16,7 @@
 
 <style scoped>
 header {
-  border: 1px solid red;
+  border: 2px solid red;
   text-transform: uppercase;
 }
 </style>
