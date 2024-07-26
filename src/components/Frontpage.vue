@@ -1,27 +1,31 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  title: String,
+  teaser: String,
+  image: String,
+  category: String,
+  subCategory: String,
+  articleInfos: Object
+})
+</script>
 
 <template>
   <section>
-    <div>
-      <div>
-        <p><span>SCIENCES</span></p>
-        <p>ACTUALITES</p>
-      </div>
-      <h2>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nemo iusto perferendis eos
-        incidunt autem.
-      </h2>
-    </div>
+    <img :src="articleInfos.frontPage.image" />
     <div>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate fugiat assumenda
-        pariatur iure ad reiciendis voluptates minus distinctio harum cum maiores laudantium velit,
-        placeat, porro eum quos. Deleniti, unde omnis. Rem laudantium molestiae dolores provident
-        perferendis nostrum commodi pariatur, ipsum recusandae? Natus, dolor quaerat. Sunt illo
-        voluptates earum aut. Impedit asperiores cum amet laboriosam vel officiis excepturi
-        repellendus deserunt quisquam!
+        <span>{{ category }}</span>
       </p>
+      <p>{{ subCategory }}</p>
+
+      <h2>
+        {{ title }}
+      </h2>
     </div>
+
+    <p>
+      {{ teaser }}
+    </p>
   </section>
 </template>
 
@@ -29,5 +33,8 @@
 section {
   border: 2px solid greenyellow;
   margin: 20px;
+}
+img {
+  width: 500px;
 }
 </style>
