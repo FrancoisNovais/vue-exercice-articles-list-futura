@@ -2,13 +2,13 @@
 
 <template>
   <header>
-    <h1>Futura</h1>
+    <h1>FUTURE</h1>
     <ul>
-      <li>sciences ></li>
-      <li>sante ></li>
-      <li>tech ></li>
-      <li>maison ></li>
-      <li>planete ></li>
+      <li>SCIENCES ></li>
+      <li>SANTE ></li>
+      <li>TECH ></li>
+      <li>MAISON ></li>
+      <li>PLANETE ></li>
     </ul>
     <button>JE M'ABONNE</button>
   </header>
@@ -17,6 +17,6 @@
 <style scoped>
 header {
   border: 2px solid red;
-  text-transform: uppercase;
+  margin: 20px;
 }
 </style>

@@ -4,17 +4,22 @@
   <section>
     <div>
       <div>
-        <p><span>Sciences</span></p>
-        <p>Actualités</p>
+        <p><span>SCIENCES</span></p>
+        <p>ACTUALITES</p>
       </div>
-      <h2>La fin de l'énigme pour les "îles magiques" de Titan, la lune de Saturne ?</h2>
+      <h2>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nemo iusto perferendis eos
+        incidunt autem.
+      </h2>
     </div>
     <div>
       <p>
-        En 2014, les sondages radar de la sonde Cassini révélaient des structures transitoires et
-        mystérieuses à la surface des mers et lacs d'hydrocarbure de Titan, la plus grosse lune de
-        Saturne, et dans le Système solaire. Une équipe de planétologues pense avoir la solution de
-        l'énigme, qui serait comparable au vêlage sur Terre.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate fugiat assumenda
+        pariatur iure ad reiciendis voluptates minus distinctio harum cum maiores laudantium velit,
+        placeat, porro eum quos. Deleniti, unde omnis. Rem laudantium molestiae dolores provident
+        perferendis nostrum commodi pariatur, ipsum recusandae? Natus, dolor quaerat. Sunt illo
+        voluptates earum aut. Impedit asperiores cum amet laboriosam vel officiis excepturi
+        repellendus deserunt quisquam!
       </p>
     </div>
   </section>
@@ -23,5 +28,6 @@
 <style scoped>
 section {
   border: 2px solid greenyellow;
+  margin: 20px;
 }
 </style>
