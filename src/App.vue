@@ -8,6 +8,7 @@ import Footer from './components/Footer.vue'
 import { ref } from 'vue'
 
 const articleInfos = ref(data)
+const articlesList = ref(data.articlesList)
 </script>
 
 <template>
@@ -20,7 +21,7 @@ const articleInfos = ref(data)
       :category="data.frontPage.category.toUpperCase()"
       :subCategory="data.frontPage.subCategory.toUpperCase()"
     />
-    <Article v-for="item in data.articlesList.length" />
+    <Article v-for="articles in articlesList" :articles="articles" />
   </main>
 
   <Footer />
