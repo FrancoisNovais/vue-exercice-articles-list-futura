@@ -26,6 +26,7 @@ const props = defineProps({
 section {
   border: 2px solid blue;
   margin: 20px;
+  height: 550px;
 }
 img {
   width: 500px;
