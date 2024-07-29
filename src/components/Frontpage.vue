@@ -16,7 +16,7 @@ const props = defineProps({
       <div>
         <div class="category-bloc">
           <p>
-            <span class="category">{{ category }}</span>
+            <span class="linear-text-gradient">{{ category }}</span>
           </p>
           <p>{{ subCategory }}</p>
         </div>
@@ -59,7 +59,6 @@ section > div > div:first-child {
 }
 
 span {
-  color: #6325ff;
   padding: 5px;
 }
 .title {
@@ -84,5 +83,10 @@ img {
   object-fit: cover;
   object-position: bottom;
   position: relative;
+}
+.linear-text-gradient {
+  background: linear-gradient(to right, #be80ff, #6325ff);
+  background-clip: text;
+  color: transparent;
 }
 </style>

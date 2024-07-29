@@ -11,7 +11,16 @@
 
 <style scoped>
 footer {
-  border: 2px solid orange;
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+a {
+  text-decoration: none;
+  color: #6325ff;
+}
+a:hover {
+  color: #be80ff;
 }
 </style>
