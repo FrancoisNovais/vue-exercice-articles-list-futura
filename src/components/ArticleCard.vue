@@ -2,6 +2,14 @@
 const props = defineProps({
   article: Object
 })
+
+const categoriesColors = {
+  sciences: ['#be80ff', '#6426ff'],
+  sante: ['#ff6b9f', '#ff4e52'],
+  planete: ['#9fcb5c', '#069849'],
+  maison: ['#fa9761', '#ff5957'],
+  tech: ['#49adfa', '#2a3df7']
+}
 </script>
 
 <template>
@@ -40,7 +48,11 @@ span:first-child {
   font-weight: bold;
   letter-spacing: 0.7px;
   /* Texte avec des couleurs dégradées */
-  background: linear-gradient(45deg, var(--light-purple), var(--dark-purple));
+  background: linear-gradient(
+    45deg,
+    v-bind('categoriesColors[article.category][0]'),
+    v-bind('categoriesColors[article.category][1]')
+  );
   /* Pour la compatibilité de la couleur dégradée entre les différents navigateurs */
   background-clip: text;
   -webkit-background-clip: text;
