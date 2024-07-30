@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="../assets/img/logo.svg" alt="" />
+    <img src="../assets/logo.svg" alt="" />
 
     <nav>
       <p>SCIENCES <font-awesome-icon :icon="['fas', 'angle-down']" /></p>
