@@ -1,47 +1,39 @@
 <script setup>
+// Import du fichier contenant les informations à afficher
 import data from './assets/articles.json'
+
+// Imports des composants
 import Header from './components/Header.vue'
-import Frontpage from './components/Frontpage.vue'
-import Article from './components/Article.vue'
+import FrontPage from './components/FrontPage.vue'
+import ArticleCard from './components/ArticleCard.vue'
 import Footer from './components/Footer.vue'
-
-import { ref } from 'vue'
-
-const articleInfos = ref(data)
-const articlesList = ref(data.articlesList)
 </script>
 
 <template>
-  <Header />
+  <div>
+    <Header />
 
-  <div class="wrapper">
-    <Frontpage
-      :title="data.frontPage.title"
-      :teaser="data.frontPage.teaser"
-      :articleInfos="articleInfos"
-      :category="data.frontPage.category.toUpperCase()"
-      :subCategory="data.frontPage.subCategory.toUpperCase()"
-    />
-  </div>
-  <div class="articles wrapper">
-    <Article v-for="articles in articlesList" :articles="articles" />
-  </div>
+    <main>
+      <FrontPage :frontPage="data.frontPage" />
 
-  <Footer />
+      <div class="container articlesList">
+        <ArticleCard v-for="article in data.articlesList" :key="article.id" :article="article" />
+      </div>
+    </main>
+
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
-.wrapper {
-  width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+main {
+  padding: 70px 0;
 }
-.articles {
+.articlesList {
+  margin-top: 100px;
+  padding: 0 20px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: center;
 }
 </style>

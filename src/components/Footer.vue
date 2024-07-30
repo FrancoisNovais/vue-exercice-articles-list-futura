@@ -1,26 +1,22 @@
-<script setup></script>
-
 <template>
   <footer>
     <p>
-      Réalisé par <a href="https://github.com/FrancoisNovais">François</a> avec
-      <a href="https://vuejs.org/">Vue.js</a>
+      Réalisé par <a href="https://www.lereacteur.io/" target="_blank">Le Reacteur</a> avec
+      <a href="https://fr.vuejs.org/" target="_blank">Vue.js</a>
     </p>
   </footer>
 </template>
 
 <style scoped>
 footer {
+  border-top: 1px solid var(--grey);
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 0;
 }
 a {
   text-decoration: none;
-  color: #6325ff;
-}
-a:hover {
-  color: #be80ff;
+  color: var(--dark-purple);
 }
 </style>

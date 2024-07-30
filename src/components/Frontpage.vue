@@ -1,92 +1,97 @@
 <script setup>
 const props = defineProps({
-  title: String,
-  teaser: String,
-  image: String,
-  category: String,
-  subCategory: String,
-  articleInfos: Object
+  frontPage: Object
 })
 </script>
 
 <template>
-  <section>
-    <img :src="articleInfos.frontPage.image" />
+  <!-- Style inline afin de mettre l'image venant de l'objet 'frontPage' en arrière-plan de la 'div' -->
+  <div class="container" :style="{ backgroundImage: `url(${frontPage.image})` }">
     <div>
+      <div class="verticalLine"></div>
       <div>
-        <div class="category-bloc">
-          <p>
-            <span class="linear-text-gradient">{{ category }}</span>
-          </p>
-          <p>{{ subCategory }}</p>
-        </div>
-        <div>
-          <span class="title">
-            {{ title }}
-          </span>
-        </div>
-      </div>
+        <h3>
+          <span>{{ frontPage.category.toUpperCase() }}</span
+          ><span>{{ frontPage.subCategory.toUpperCase() }}</span>
+        </h3>
 
-      <p class="teaser">
-        {{ teaser }}
-      </p>
+        <h1>
+          <span>{{ frontPage.title }}</span>
+        </h1>
+      </div>
     </div>
-  </section>
+
+    <p>{{ frontPage.teaser }}</p>
+  </div>
 </template>
 
 <style scoped>
-section {
-  margin: 20px 0;
+.container {
   height: 550px;
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding: 90px;
+}
+/* -- Pour la ligne verticale colorée à gauche du titre */
+.container > div {
   position: relative;
 }
-section > div {
+.container > div::before {
+  content: '';
   position: absolute;
-  top: 80px;
-  left: 80px;
-  max-width: 800px;
+  top: 0px;
+  width: 5px;
+  height: 100%;
+  left: -5px;
+  background: linear-gradient(var(--light-purple), var(--dark-purple));
 }
-section > div > div:first-child {
-  border-left: 4px solid;
-  border-image: linear-gradient(to bottom, #be80ff, #6325ff) 1;
-}
-.category-bloc {
-  display: flex;
-  background-color: black;
+/* ------------------------- */
+h1 {
+  font-size: 32px;
+  line-height: 46px;
   color: white;
-  padding: 8px 8px 5px 0;
-  width: fit-content;
+  width: 750px;
+  font-family: var(--font-title);
+  font-weight: bold;
 }
-
+h3 {
+  font-size: 12px;
+  line-height: 24px;
+  color: white;
+  background-color: black;
+  padding: 5px 0;
+  display: inline;
+}
+h3 span:first-child {
+  letter-spacing: 0.7px;
+  /* Texte avec des couleurs dégradées */
+  background: linear-gradient(45deg, var(--light-purple), var(--dark-purple));
+  background-clip: text;
+  /* Pour la compatibilité de la couleur dégradée entre les différents navigateurs */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h3 span:last-child {
+  padding: 0 10px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
 span {
   padding: 5px;
-}
-.title {
-  font-family: 'Merriweather', serif;
-  font-style: italic;
-  font-size: 34px;
   background-color: black;
-  line-height: 50px;
+  white-space: pre-wrap;
+}
+.container > p {
+  margin-top: 40px;
+  padding: 25px;
+  /* Arrière plan noir transparent */
+  background-color: rgba(0, 0, 0, 0.487);
   color: white;
-}
-
-.teaser {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  margin: 2.5rem 0 0;
-  padding: 1.5rem;
-  line-height: 20px;
-}
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: bottom;
-  position: relative;
-}
-.linear-text-gradient {
-  background: linear-gradient(to right, #be80ff, #6325ff);
-  background-clip: text;
-  color: transparent;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 0.7px;
+  font-size: 14px;
+  width: 800px;
 }
 </style>

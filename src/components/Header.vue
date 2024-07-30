@@ -1,51 +1,45 @@
-<script setup></script>
-
 <template>
   <header>
-    <h1>Futura</h1>
-    <ul>
-      <li>Sciences <font-awesome-icon :icon="['fas', 'chevron-down']" /></li>
-      <li>Sante <font-awesome-icon :icon="['fas', 'chevron-down']" /></li>
-      <li>Tech <font-awesome-icon :icon="['fas', 'chevron-down']" /></li>
-      <li>Maison <font-awesome-icon :icon="['fas', 'chevron-down']" /></li>
-      <li>Planete <font-awesome-icon :icon="['fas', 'chevron-down']" /></li>
-    </ul>
-    <button>Je m'abonne</button>
+    <img src="../assets/img/logo.svg" alt="" />
+
+    <nav>
+      <p>SCIENCES <font-awesome-icon :icon="['fas', 'angle-down']" /></p>
+      <p>SANTE <font-awesome-icon :icon="['fas', 'angle-down']" /></p>
+      <p>TECH <font-awesome-icon :icon="['fas', 'angle-down']" /></p>
+      <p>MAISON <font-awesome-icon :icon="['fas', 'angle-down']" /></p>
+      <p>PLANETE <font-awesome-icon :icon="['fas', 'angle-down']" /></p>
+    </nav>
+
+    <button>JE M'ABONNE</button>
   </header>
 </template>
 
 <style scoped>
 header {
-  /* border: 2px solid red; */
-  padding: 10px 20px;
-  background: linear-gradient(to right, #be80ff, #6325ff);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-ul {
-  display: flex;
-  gap: 20px;
+  height: 60px;
+  padding: 0 55px;
   color: white;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Pour obtenir un arrière plan avec des couleurs dégradées */
+  background: linear-gradient(45deg, var(--light-purple), var(--dark-purple));
 }
-li {
-  cursor: pointer;
+nav {
+  display: flex;
+  gap: 25px;
 }
 svg {
   margin-left: 5px;
-  font-size: 12px;
 }
 button {
-  background-color: #ffaf15;
-  color: white;
-  border: none;
+  background-color: var(--yellow);
   padding: 10px 15px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: bold;
-}
-button:hover {
-  background-color: #d28a4e;
+  font-size: 14px;
+  border: none;
+  /* Pour dire au bouton de prendre la couleur de texte, la police de caractère et la taille de caractère de son parent */
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 </style>
